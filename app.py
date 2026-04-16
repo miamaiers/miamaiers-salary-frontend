@@ -1,8 +1,7 @@
 import flask
-from flask import request, render_template, redirect, url_for
-from flask_cors import CORS
 import requests
-
+from flask import redirect, render_template, request, url_for
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
 
@@ -11,7 +10,7 @@ app.config["SECRET_KEY"] = "sdfgsgsheryjw6qgbdtjr68w3456w3rgwyh"
 CORS(app)
 
 # Get this URL from the Azure Overview page of your API web app
-api_url = "http://127.0.0.1:5002"  # base url for API endpoints
+api_url = "miamaiers-mod12-eac5bnfqdafpadh8.canadacentral-01.azurewebsites.net"  # base url for API endpoints
 
 
 # main index page route
@@ -34,7 +33,6 @@ def predict():
         print(form)
         # extract user data from the form and save it in a python variable
         age = form["age"]
-        print(age)
         gender = form["gender"]
         country = form["country"]
         highest_deg = form["highest_deg"]
